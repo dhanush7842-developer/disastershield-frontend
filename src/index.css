@@ -1,0 +1,85 @@
+/* ── DisasterShield AI — Global Styles ─────────────────────────── */
+:root {
+  --bg-base:    #080d1a;
+  --bg-panel:   #0d1526;
+  --bg-card:    #111c33;
+  --bg-hover:   #162040;
+  --border:     #1e2d4a;
+  --border-hi:  #2a3f6a;
+
+  --amber:      #f59e0b;
+  --amber-dim:  #92610a;
+  --red:        #ef4444;
+  --red-dim:    #7f1d1d;
+  --emerald:    #10b981;
+  --emerald-dim:#064e3b;
+  --blue:       #3b82f6;
+  --blue-dim:   #1e3a8a;
+  --orange:     #f97316;
+
+  --text-hi:    #f0f6ff;
+  --text-mid:   #8ba4cc;
+  --text-lo:    #3d5278;
+
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  --radius:     10px;
+  --radius-lg:  16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg-base);
+  color: var(--text-hi);
+  font-family: var(--font-body);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-panel); }
+::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-lo); }
+
+/* Animations */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(245,158,11,0.3); }
+  50%       { box-shadow: 0 0 20px rgba(245,158,11,0.6); }
+}
+
+.fade-in  { animation: fade-in  0.4s ease both; }
+.slide-in { animation: slide-in 0.3s ease both; }
+
+/* Skeleton loader */
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-hover) 50%, var(--bg-card) 75%);
+  background-size: 400px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: var(--radius);
+}
+
+/* Utility */
+.mono { font-family: var(--font-mono); }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
