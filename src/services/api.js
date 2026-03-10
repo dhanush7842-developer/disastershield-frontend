@@ -1,6 +1,6 @@
 /* services/api.js — All backend calls with mock-data fallback */
 
-const BASE = "";   // empty = uses CRA proxy (localhost:8000)
+const BASE = "https://disastershield-backend.onrender.com";   // empty = uses CRA proxy (localhost:8000)
 
 // ── helpers ───────────────────────────────────────────────────────────────
 async function req(method, path, body) {
